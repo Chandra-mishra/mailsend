@@ -43,8 +43,8 @@ let transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-        user: 'prasadchandra18@gmail.com', // generated ethereal user
-        pass: '9945229623'  // generated ethereal password
+        user: typeyouremail, // generated ethereal user
+        pass: TypePassword  // generated ethereal password
     },
     tls:{
       rejectUnauthorized:false
@@ -82,7 +82,7 @@ var data = {
   html:output
 };
  
-mailgun.messages().send(data, function (error, body) {
+mailgun.messages().send(data, (error, body)=> {
   console.log(body);
   if(!error)
     res.render('contact', {msg:'Email has been sent'});
